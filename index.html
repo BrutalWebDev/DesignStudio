@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND Brand</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="frame-1__header">
+        <img id="logo" src="images/Logo.svg" alt="Logo">
+    </div>
+
+    <div id="frame-1">
+        <h1 id="frame-one"></h1>
+        <h1 id="frame-two"></h1>
+    </div>
+
+    <div id="frame1-shtorka-up"></div>
+    <div id="frame1-shtorka-down"></div>
+
+    <div id="frame1-shtorka-up-one"></div>
+    <div id="frame1-shtorka-down-one"></div>
+
+    <div id="frame1-shtorka-up-two"></div>
+    <div id="frame1-shtorka-down-two"></div>
+    <div id="frame1-shtorka-down-two-circle"></div>
+
+
+
+    <div id="frame-1__footer">
+        <p id="frame-1__footer-text">{ 1% }</p>
+    </div>
+    
+
+    <script>
+
+        timer = 1;
+        let timerId = setInterval(() => timing(), 60);
+
+        function timing(){
+            document.getElementById("frame-1__footer-text").innerHTML = '{ '+timer+'% }';
+            timer+=1;
+
+            if (timer == 101) {
+                clearInterval(timerId);
+            }
+        }
+
+        const nulls = document.getElementById("frame1-shtorka-down");
+        const one = document.getElementById("frame1-shtorka-down-one");
+        const two = document.getElementById("frame1-shtorka-up-two");
+        const three = document.getElementById("frame1-shtorka-up");
+        const four = document.getElementById("frame1-shtorka-down-two-circle");
+
+        document.getElementById("frame-one").innerHTML = 'create';
+        document.getElementById("frame-two").innerHTML = 'future';
+        document.getElementById("frame-one").setAttribute('style','font-style: light');
+        document.getElementById("frame-two").setAttribute('style','font-style: italic');
+        document.getElementById("frame-1").style.zIndex = '10';
+        document.getElementById('logo').style.zIndex = '10';
+        document.getElementById('frame-1__footer-text').style.zIndex = '10';
+        
+        three.addEventListener("animationstart", () => {
+            document.getElementById('logo').src = 'images/Logo.svg';
+            document.getElementById('frame-1__footer-text').style.color = 'rgb(255, 255, 255)';
+            document.getElementById('frame-1').style.color = 'rgb(255, 255, 255)';
+        });
+        nulls.addEventListener("animationstart", () => {
+            document.getElementById("frame-one").innerHTML = 'create';
+            document.getElementById("frame-two").innerHTML = 'future';
+            document.getElementById("frame-one").setAttribute('style','font-style: light');
+            document.getElementById("frame-two").setAttribute('style','font-style: italic');
+            document.getElementById('logo').src = 'images/logoWhite.svg';
+            document.getElementById('frame-1__footer-text').style.color = 'rgb(255, 255, 255)';
+            document.getElementById('frame-1').style.color = 'rgb(255, 255, 255)';
+
+        });
+        nulls.addEventListener("animationend", () => {
+            document.getElementById("frame-one").innerHTML = 'be';
+            document.getElementById("frame-two").innerHTML = 'yourself';
+            document.getElementById('logo').src = 'images/logoWhite.svg';
+        });
+
+        one.addEventListener("animationend", () => {
+            document.getElementById("frame-one").innerHTML = 'stand';
+            document.getElementById("frame-two").innerHTML = 'out';
+            document.getElementById("frame-one").setAttribute('style','font-style: italic');
+            document.getElementById("frame-two").setAttribute('style','font-style: light');
+        });
+
+
+
+    </script>
+</body>
+</html>
